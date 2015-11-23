@@ -10,10 +10,12 @@
     <Property Name="Adres" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Pesel" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="NumerTelefonu" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Hasło" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Zatwierdzono" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Name="Miasto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="KodPocztowy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdUzytkownika" Type="Int32" />
   </EntityType>
-  <EntityContainer Name="PrzychodniaBDEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="PrzychodniaBDEntities5" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Pacjent" EntityType="Self.Pacjent" />
   </EntityContainer>
 </Schema>

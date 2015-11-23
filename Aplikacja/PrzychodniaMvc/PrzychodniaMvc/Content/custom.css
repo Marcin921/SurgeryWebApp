@@ -2,3 +2,11 @@
     background-color: #07196d;
     background-image: none;
 }
+tr:first-child
+{
+        background-color : #79a5ca;
+}
+tr:hover td
+{
+    background-color : #79a5ca;
+}

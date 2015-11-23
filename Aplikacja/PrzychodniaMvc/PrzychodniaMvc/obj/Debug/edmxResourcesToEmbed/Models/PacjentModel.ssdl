@@ -10,8 +10,10 @@
     <Property Name="Adres" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Pesel" Type="nvarchar" MaxLength="11" Nullable="false" />
     <Property Name="NumerTelefonu" Type="nchar" MaxLength="10" Nullable="false" />
-    <Property Name="Login" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="Hasło" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Zatwierdzono" Type="nchar" MaxLength="1" />
+    <Property Name="Miasto" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="KodPocztowy" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdUzytkownika" Type="int" />
   </EntityType>
   <EntityContainer Name="PrzychodniaBDModelStoreContainer">
     <EntitySet Name="Pacjent" EntityType="Self.Pacjent" Schema="dbo" store:Type="Tables" />

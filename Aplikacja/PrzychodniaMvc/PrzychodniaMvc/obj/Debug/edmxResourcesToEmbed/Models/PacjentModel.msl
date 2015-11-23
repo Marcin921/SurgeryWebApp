@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="PrzychodniaBDModelStoreContainer" CdmEntityContainer="PrzychodniaBDEntities">
+  <EntityContainerMapping StorageEntityContainer="PrzychodniaBDModelStoreContainer" CdmEntityContainer="PrzychodniaBDEntities5">
     <EntitySetMapping Name="Pacjent">
       <EntityTypeMapping TypeName="PrzychodniaBDModel.Pacjent">
         <MappingFragment StoreEntitySet="Pacjent">
@@ -10,8 +10,10 @@
           <ScalarProperty Name="Adres" ColumnName="Adres" />
           <ScalarProperty Name="Pesel" ColumnName="Pesel" />
           <ScalarProperty Name="NumerTelefonu" ColumnName="NumerTelefonu" />
-          <ScalarProperty Name="Login" ColumnName="Login" />
-          <ScalarProperty Name="Hasło" ColumnName="Hasło" />
+          <ScalarProperty Name="Zatwierdzono" ColumnName="Zatwierdzono" />
+          <ScalarProperty Name="Miasto" ColumnName="Miasto" />
+          <ScalarProperty Name="KodPocztowy" ColumnName="KodPocztowy" />
+          <ScalarProperty Name="IdUzytkownika" ColumnName="IdUzytkownika" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

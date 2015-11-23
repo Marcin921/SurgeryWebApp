@@ -1,0 +1,60 @@
+﻿@model IEnumerable<PrzychodniaMvc.Models.BazaDanych.RolaUzytkownika>
+
+@{ 
+    ViewBag.Title = "Lista Uzytkowników";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Utwórz nowego Pacjenta", "UtworzPacjenta","Admin", null, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Utwórz nowego Lekarza", "UtworzLekarza","Admin", null, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Utwórz nowego Recepcjoniste", "UtworzRecepcjoniste","Admin", null, new { @class = "btn btn-primary" })
+</p>
+
+<table class="table">
+    <tr>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.Uzytkownik.Login)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Uzytkownik.Pacjent.FirstOrDefault(p => p.IdUzytkownika == model.IdUzytkownika).Imie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Uzytkownik.Pacjent.FirstOrDefault(p => p.IdUzytkownika == model.IdUzytkownika).Nazwisko)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rola.NazwaRoli)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Uzytkownik.Login)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Uzytkownik.Pacjent.FirstOrDefault(p => p.IdUzytkownika == item.IdUzytkownika).Imie)
+            @Html.DisplayFor(modelItem => item.Uzytkownik.Admin.FirstOrDefault(p => p.IdUzytkownika == item.IdUzytkownika).Imie)
+            @Html.DisplayFor(modelItem => item.Uzytkownik.Recepcjonista.FirstOrDefault(p => p.IdUzytkownika == item.IdUzytkownika).Imie)
+            @Html.DisplayFor(modelItem => item.Uzytkownik.Lekarz.FirstOrDefault(p => p.IdUzytkownika == item.IdUzytkownika).Imie)
+         </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Uzytkownik.Pacjent.FirstOrDefault(p => p.IdUzytkownika == item.IdUzytkownika).Nazwisko)
+            @Html.DisplayFor(modelItem => item.Uzytkownik.Admin.FirstOrDefault(p => p.IdUzytkownika == item.IdUzytkownika).Nazwisko)
+            @Html.DisplayFor(modelItem => item.Uzytkownik.Recepcjonista.FirstOrDefault(p => p.IdUzytkownika == item.IdUzytkownika).Nazwisko)
+            @Html.DisplayFor(modelItem => item.Uzytkownik.Lekarz.FirstOrDefault(p => p.IdUzytkownika == item.IdUzytkownika).Nazwisko)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rola.NazwaRoli)
+        </td>
+        <td>
+            @Html.ActionLink("Edytuj", "EdytujUzytkownia", new { id=item.IdUzytkownika }, new { @class = "btn btn-primary" } ) 
+            @Html.ActionLink("Usuń", "UsunUzytkownika", new { id=item.IdUzytkownika }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

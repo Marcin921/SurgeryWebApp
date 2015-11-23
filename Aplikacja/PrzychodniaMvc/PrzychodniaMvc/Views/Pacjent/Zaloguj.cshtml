@@ -1,4 +1,4 @@
-﻿@model PrzychodniaMvc.Models.Pacjent
+﻿@model PrzychodniaMvc.Models.BazaDanych.Pacjent
 
 @{
     ViewBag.Title = "Logowanie";
@@ -13,17 +13,17 @@
                 <hr />
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="form-group">
-                    @Html.LabelFor(m => m.Login, new { @class = "col-md-2 control-label" })
+                    @Html.LabelFor(m => m.Uzytkownik.Login, new { @class = "col-md-2 control-label" })
                     <div class="col-md-10">
-                        @Html.TextBoxFor(m => m.Login, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.Hasło, "", new { @class = "text-danger" })
+                        @Html.TextBoxFor(m => m.Uzytkownik.Login, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Uzytkownik.Login, "", new { @class = "text-danger" })
                     </div>
                 </div>
                 <div class="form-group">
-                    @Html.LabelFor(m => m.Hasło, new { @class = "col-md-2 control-label" })
+                    @Html.LabelFor(m => m.Uzytkownik.Haslo, new { @class = "col-md-2 control-label" })
                     <div class="col-md-10">
-                        @Html.PasswordFor(m => m.Hasło, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.Hasło, "", new { @class = "text-danger" })
+                        @Html.PasswordFor(m => m.Uzytkownik.Haslo, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Uzytkownik.Login, "", new { @class = "text-danger" })
                     </div>
                 </div>
                 <div class="form-group">
