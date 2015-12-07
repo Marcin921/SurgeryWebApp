@@ -1,0 +1,88 @@
+﻿@model PrzychodniaMvc.Models.BazaDanych.SpecjalizacjaLekarza
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Lekarz</h4>
+        <hr />
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Lekarz.Uzytkownik.Login, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Lekarz.Uzytkownik.Login, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Lekarz.Uzytkownik.Haslo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Lekarz.Uzytkownik.Haslo, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Lekarz.Imie, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Lekarz.Imie, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Lekarz.Imie, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Lekarz.Nazwisko, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Lekarz.Nazwisko, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Lekarz.Nazwisko, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Lekarz.Adres, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Lekarz.Adres, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Lekarz.Adres, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Lekarz.DataZatrudnienia, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+             @Html.EditorFor(model => model.Lekarz.DataZatrudnienia, new { htmlAttributes = new { @class = "form-control" } })
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Lekarz.NumerTelefonu, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Lekarz.NumerTelefonu, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Lekarz.NumerTelefonu, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Specjalizacja.IdSpecjalizacji, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.IdSpecjalizacji, Model.Specjalizacja.ListaSpecjalizacji, htmlAttributes: new { @class = "form-control" })
+              
+            </div>
+        </div>
+            <div class="col-md-offset-2 col-md-10">
+                @if (Model.Lekarz.IdLekarza == 0)
+                {
+                <input type="Submit" title="Zapisz" value="Utworz Lekarza" class="btn btn-success" />
+                }
+                else
+                {
+                   @Html.ActionLink("Przejdź do edycji dni i godzin pracy", "EdytujDniIGodzinyPracy", new { @id = Model.Lekarz.IdLekarza }, new { @class = "btn btn-primary" })
+                }
+             </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Wróć", "WyswietlUzytkownikow", "Admin", null, new { @class = "btn btn-warning" })
+</div>
