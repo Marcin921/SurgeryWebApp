@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PrzychodniaBDModel2.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Recepcjonista">
+    <Key>
+      <PropertyRef Name="IdRecepjonisty" />
+    </Key>
+    <Property Name="IdRecepjonisty" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Imie" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="Nazwisko" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="Adres" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="DataZatrudnienia" Type="date" Nullable="false" />
+    <Property Name="NumerTelefonu" Type="nchar" MaxLength="10" />
+    <Property Name="Login" Type="nchar" MaxLength="50" />
+    <Property Name="Hasło" Type="nchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="PrzychodniaBDModel2StoreContainer">
+    <EntitySet Name="Recepcjonista" EntityType="Self.Recepcjonista" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

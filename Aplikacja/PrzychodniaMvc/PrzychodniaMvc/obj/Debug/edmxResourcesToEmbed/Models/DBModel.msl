@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PrzychodniaBDModel4StoreContainer" CdmEntityContainer="PrzychodniaBDEntities7">
+    <EntitySetMapping Name="Admin">
+      <EntityTypeMapping TypeName="PrzychodniaBDModel4.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="IdAdmina" ColumnName="IdAdmina" />
+          <ScalarProperty Name="Imie" ColumnName="Imie" />
+          <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+          <ScalarProperty Name="IdUzytkownika" ColumnName="IdUzytkownika" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lekarz">
+      <EntityTypeMapping TypeName="PrzychodniaBDModel4.Lekarz">
+        <MappingFragment StoreEntitySet="Lekarz">
+          <ScalarProperty Name="IdLekarza" ColumnName="IdLekarza" />
+          <ScalarProperty Name="Imie" ColumnName="Imie" />
+          <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="DataZatrudnienia" ColumnName="DataZatrudnienia" />
+          <ScalarProperty Name="NumerTelefonu" ColumnName="NumerTelefonu" />
+          <ScalarProperty Name="IdUzytkownika" ColumnName="IdUzytkownika" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pacjent">
+      <EntityTypeMapping TypeName="PrzychodniaBDModel4.Pacjent">
+        <MappingFragment StoreEntitySet="Pacjent">
+          <ScalarProperty Name="IdPacjenta" ColumnName="IdPacjenta" />
+          <ScalarProperty Name="Imie" ColumnName="Imie" />
+          <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="Pesel" ColumnName="Pesel" />
+          <ScalarProperty Name="NumerTelefonu" ColumnName="NumerTelefonu" />
+          <ScalarProperty Name="Zatwierdzono" ColumnName="Zatwierdzono" />
+          <ScalarProperty Name="Miasto" ColumnName="Miasto" />
+          <ScalarProperty Name="KodPocztowy" ColumnName="KodPocztowy" />
+          <ScalarProperty Name="IdUzytkownika" ColumnName="IdUzytkownika" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Recepcjonista">
+      <EntityTypeMapping TypeName="PrzychodniaBDModel4.Recepcjonista">
+        <MappingFragment StoreEntitySet="Recepcjonista">
+          <ScalarProperty Name="IdRecepjonisty" ColumnName="IdRecepjonisty" />
+          <ScalarProperty Name="Imie" ColumnName="Imie" />
+          <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="DataZatrudnienia" ColumnName="DataZatrudnienia" />
+          <ScalarProperty Name="NumerTelefonu" ColumnName="NumerTelefonu" />
+          <ScalarProperty Name="IdUzytkownika" ColumnName="IdUzytkownika" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rola">
+      <EntityTypeMapping TypeName="PrzychodniaBDModel4.Rola">
+        <MappingFragment StoreEntitySet="Rola">
+          <ScalarProperty Name="IdRoli" ColumnName="IdRoli" />
+          <ScalarProperty Name="NazwaRoli" ColumnName="NazwaRoli" />
+          <ScalarProperty Name="OpisRoli" ColumnName="OpisRoli" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RolaUzytkownika">
+      <EntityTypeMapping TypeName="PrzychodniaBDModel4.RolaUzytkownika">
+        <MappingFragment StoreEntitySet="RolaUzytkownika">
+          <ScalarProperty Name="IdRoliUzytkownika" ColumnName="IdRoliUzytkownika" />
+          <ScalarProperty Name="IdRoli" ColumnName="IdRoli" />
+          <ScalarProperty Name="IdUzytkownika" ColumnName="IdUzytkownika" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Uzytkownik">
+      <EntityTypeMapping TypeName="PrzychodniaBDModel4.Uzytkownik">
+        <MappingFragment StoreEntitySet="Uzytkownik">
+          <ScalarProperty Name="IdUzytkownika" ColumnName="IdUzytkownika" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Haslo" ColumnName="Haslo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DzienGodzinaPracyLekarza">
+      <EntityTypeMapping TypeName="PrzychodniaBDModel4.DzienGodzinaPracyLekarza">
+        <MappingFragment StoreEntitySet="DzienGodzinaPracyLekarza">
+          <ScalarProperty Name="IdGabinetu" ColumnName="IdGabinetu" />
+          <ScalarProperty Name="IdLekarza" ColumnName="IdLekarza" />
+          <ScalarProperty Name="CzasJednejWizyty" ColumnName="CzasJednejWizyty" />
+          <ScalarProperty Name="GodzinaZak" ColumnName="GodzinaZak" />
+          <ScalarProperty Name="GodzinaRozp" ColumnName="GodzinaRozp" />
+          <ScalarProperty Name="DzienTygodnia" ColumnName="DzienTygodnia" />
+          <ScalarProperty Name="IdDzienGodzina" ColumnName="IdDzienGodzina" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

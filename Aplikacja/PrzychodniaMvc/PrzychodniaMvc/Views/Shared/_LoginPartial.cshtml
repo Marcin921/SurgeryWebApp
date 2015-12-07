@@ -1,0 +1,18 @@
+﻿@if (User.Identity.IsAuthenticated)
+{
+    using (Html.BeginForm("Wyloguj", "Pacjent", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+
+        <ul class="nav navbar-nav navbar-right">
+            
+            <li><a href="javascript:document.getElementById('logoutForm').submit()">Wyloguj</a></li>
+        </ul>
+    }
+}
+else if(!Request.Url.ToString().Contains("/Admin/Zaloguj"))
+{
+<ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Załóż Konto", "Rejestruj", "Pacjent", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li>@Html.ActionLink("Zaloguj się", "Zaloguj", "Pacjent", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}

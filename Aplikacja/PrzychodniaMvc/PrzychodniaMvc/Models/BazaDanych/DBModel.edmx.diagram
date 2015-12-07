@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e59bd56727004808b421b780a4150636" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="PrzychodniaBDModel4.Admin" Width="1.5" PointX="2.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrzychodniaBDModel4.Lekarz" Width="1.5" PointX="2.5" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrzychodniaBDModel4.Pacjent" Width="1.5" PointX="4.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrzychodniaBDModel4.Recepcjonista" Width="1.5" PointX="7.125" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrzychodniaBDModel4.Rola" Width="1.5" PointX="7.5" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrzychodniaBDModel4.RolaUzytkownika" Width="1.5" PointX="7.625" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrzychodniaBDModel4.Uzytkownik" Width="1.5" PointX="4.75" PointY="6.875" IsExpanded="true" />
+        <AssociationConnector Association="PrzychodniaBDModel4.FK_Admin_Uzytkownik" ManuallyRouted="false" />
+        <AssociationConnector Association="PrzychodniaBDModel4.FK_Lekarz_Uzytkownik" ManuallyRouted="false" />
+        <AssociationConnector Association="PrzychodniaBDModel4.FK_Pacjent_Uzytkownik" ManuallyRouted="false" />
+        <AssociationConnector Association="PrzychodniaBDModel4.FK_Recepcjonista_Uzytkownik" ManuallyRouted="false" />
+        <AssociationConnector Association="PrzychodniaBDModel4.FK_RolaUzytkownika_Rola" ManuallyRouted="false" />
+        <AssociationConnector Association="PrzychodniaBDModel4.FK_RolaUzytkownika_Uzytkownik" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="PrzychodniaBDModel4.DzienGodzinaPracyLekarza" Width="1.5" PointX="5.125" PointY="14.625" />
+        <EntityTypeShape EntityType="PrzychodniaBDModel4.Rejestracja" Width="1.5" PointX="7.375" PointY="13.125" />
+        <EntityTypeShape EntityType="PrzychodniaBDModel4.Specjalizacja" Width="1.5" PointX="5.625" PointY="1" />
+        <EntityTypeShape EntityType="PrzychodniaBDModel4.SpecjalizacjaLekarza" Width="1.5" PointX="5.125" PointY="4" />
+        <EntityTypeShape EntityType="PrzychodniaBDModel4.Wizyta" Width="1.5" PointX="9.625" PointY="13.625" />
+        <AssociationConnector Association="PrzychodniaBDModel4.FK_DzienGodzinaPracyLekarza_Lekarz" />
+        <AssociationConnector Association="PrzychodniaBDModel4.FK_Rejestracja_Lekarz" />
+        <AssociationConnector Association="PrzychodniaBDModel4.FK_SpecjalizacjaLekarza_Lekarz" />
+        <AssociationConnector Association="PrzychodniaBDModel4.FK_Rejestracja_Pacjent" />
+        <AssociationConnector Association="PrzychodniaBDModel4.FK_Wizyta_Rejestracja" />
+        <AssociationConnector Association="PrzychodniaBDModel4.FK_SpecjalizacjaLekarza_Specjalizacja" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

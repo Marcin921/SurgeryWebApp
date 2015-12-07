@@ -1,0 +1,49 @@
+﻿@model IEnumerable<PrzychodniaMvc.Models.BazaDanych.DzienGodzinaPracyLekarza>
+
+@{
+    ViewBag.Title = "Lista dni i godzin pracy doktora";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Utwórz nowy dzień pracy", "UtworzDzienPracy", "Admin", new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DzienTygodnia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GodzinaRozp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GodzinaZak)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CzasJednejWizyty)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DzienTygodnia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GodzinaRozp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GodzinaZak)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CzasJednejWizyty)
+        </td>
+        <td>
+            @Html.ActionLink("Usun", "UsunDzienIGodzinePracy", new { id=item.IdDzienGodzina }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>
