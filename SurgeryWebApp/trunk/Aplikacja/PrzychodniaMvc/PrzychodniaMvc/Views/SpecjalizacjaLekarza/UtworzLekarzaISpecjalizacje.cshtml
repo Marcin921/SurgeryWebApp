@@ -1,0 +1,41 @@
+﻿@model PrzychodniaMvc.Models.BazaDanych.SpecjalizacjaLekarza
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>SpecjalizacjaLekarza</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.IdSpecjalizacji, "IdSpecjalizacji", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("IdSpecjalizacji", new List<SelectListItem>
+                       {
+                         new SelectListItem {Text = "January", Value = "1"},
+                         new SelectListItem {Text = "February", Value = "2"},
+                         new SelectListItem {Text = "March", Value = "3"}
+                       }, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.IdSpecjalizacji, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IdLekarza, "IdLekarza", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.ValidationMessageFor(model => model.IdLekarza, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

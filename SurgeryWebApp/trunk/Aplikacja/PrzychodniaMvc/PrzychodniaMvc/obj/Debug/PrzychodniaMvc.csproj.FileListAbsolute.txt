@@ -1,0 +1,82 @@
+c:\users\marcin\documents\visual studio 2015\Projects\PrzychodniaMvc\PrzychodniaMvc\bin\roslyn\csc.exe
+c:\users\marcin\documents\visual studio 2015\Projects\PrzychodniaMvc\PrzychodniaMvc\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+c:\users\marcin\documents\visual studio 2015\Projects\PrzychodniaMvc\PrzychodniaMvc\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+c:\users\marcin\documents\visual studio 2015\Projects\PrzychodniaMvc\PrzychodniaMvc\bin\roslyn\Microsoft.CodeAnalysis.dll
+c:\users\marcin\documents\visual studio 2015\Projects\PrzychodniaMvc\PrzychodniaMvc\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+c:\users\marcin\documents\visual studio 2015\Projects\PrzychodniaMvc\PrzychodniaMvc\bin\roslyn\Microsoft.CSharp.Core.targets
+c:\users\marcin\documents\visual studio 2015\Projects\PrzychodniaMvc\PrzychodniaMvc\bin\roslyn\Microsoft.VisualBasic.Core.targets
+c:\users\marcin\documents\visual studio 2015\Projects\PrzychodniaMvc\PrzychodniaMvc\bin\roslyn\System.Collections.Immutable.dll
+c:\users\marcin\documents\visual studio 2015\Projects\PrzychodniaMvc\PrzychodniaMvc\bin\roslyn\System.Reflection.Metadata.dll
+c:\users\marcin\documents\visual studio 2015\Projects\PrzychodniaMvc\PrzychodniaMvc\bin\roslyn\vbc.exe
+c:\users\marcin\documents\visual studio 2015\Projects\PrzychodniaMvc\PrzychodniaMvc\bin\roslyn\VBCSCompiler.exe
+c:\users\marcin\documents\visual studio 2015\Projects\PrzychodniaMvc\PrzychodniaMvc\bin\roslyn\VBCSCompiler.exe.config
+c:\users\marcin\documents\visual studio 2015\Projects\PrzychodniaMvc\PrzychodniaMvc\bin\PrzychodniaMvc.dll.config
+c:\users\marcin\documents\visual studio 2015\Projects\PrzychodniaMvc\PrzychodniaMvc\bin\PrzychodniaMvc.dll
+c:\users\marcin\documents\visual studio 2015\Projects\PrzychodniaMvc\PrzychodniaMvc\bin\PrzychodniaMvc.pdb
+c:\users\marcin\documents\visual studio 2015\Projects\PrzychodniaMvc\PrzychodniaMvc\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+c:\users\marcin\documents\visual studio 2015\Projects\PrzychodniaMvc\PrzychodniaMvc\bin\Microsoft.Web.Infrastructure.dll
+c:\users\marcin\documents\visual studio 2015\Projects\PrzychodniaMvc\PrzychodniaMvc\bin\System.Web.Helpers.dll
+c:\users\marcin\documents\visual studio 2015\Projects\PrzychodniaMvc\PrzychodniaMvc\bin\System.Web.Mvc.dll
+c:\users\marcin\documents\visual studio 2015\Projects\PrzychodniaMvc\PrzychodniaMvc\bin\System.Web.Razor.dll
+c:\users\marcin\documents\visual studio 2015\Projects\PrzychodniaMvc\PrzychodniaMvc\bin\System.Web.Webpages.Deployment.dll
+c:\users\marcin\documents\visual studio 2015\Projects\PrzychodniaMvc\PrzychodniaMvc\bin\System.Web.Webpages.dll
+c:\users\marcin\documents\visual studio 2015\Projects\PrzychodniaMvc\PrzychodniaMvc\bin\System.Web.Webpages.Razor.dll
+c:\users\marcin\documents\visual studio 2015\Projects\PrzychodniaMvc\PrzychodniaMvc\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\users\marcin\documents\visual studio 2015\Projects\PrzychodniaMvc\PrzychodniaMvc\bin\System.Web.Razor.xml
+c:\users\marcin\documents\visual studio 2015\Projects\PrzychodniaMvc\PrzychodniaMvc\bin\System.Web.Webpages.xml
+c:\users\marcin\documents\visual studio 2015\Projects\PrzychodniaMvc\PrzychodniaMvc\bin\System.Web.Webpages.Deployment.xml
+c:\users\marcin\documents\visual studio 2015\Projects\PrzychodniaMvc\PrzychodniaMvc\bin\System.Web.Webpages.Razor.xml
+c:\users\marcin\documents\visual studio 2015\Projects\PrzychodniaMvc\PrzychodniaMvc\bin\System.Web.Helpers.xml
+c:\users\marcin\documents\visual studio 2015\Projects\PrzychodniaMvc\PrzychodniaMvc\bin\System.Web.Mvc.xml
+c:\users\marcin\documents\visual studio 2015\Projects\PrzychodniaMvc\PrzychodniaMvc\obj\Debug\PrzychodniaMvc.dll
+c:\users\marcin\documents\visual studio 2015\Projects\PrzychodniaMvc\PrzychodniaMvc\obj\Debug\PrzychodniaMvc.pdb
+C:\Users\Marcin\Documents\Visual Studio 2015\Projects\PrzychodniaMvc\PrzychodniaMvc\bin\EntityFramework.dll
+C:\Users\Marcin\Documents\Visual Studio 2015\Projects\PrzychodniaMvc\PrzychodniaMvc\bin\EntityFramework.SqlServer.dll
+C:\Users\Marcin\Documents\Visual Studio 2015\Projects\PrzychodniaMvc\PrzychodniaMvc\bin\EntityFramework.xml
+C:\Users\Marcin\Documents\Visual Studio 2015\Projects\PrzychodniaMvc\PrzychodniaMvc\bin\EntityFramework.SqlServer.xml
+D:\Sources\Surgery\Surg\SurgeryWebApp\Aplikacja\PrzychodniaMvc\PrzychodniaMvc\bin\roslyn\csc.exe
+D:\Sources\Surgery\Surg\SurgeryWebApp\Aplikacja\PrzychodniaMvc\PrzychodniaMvc\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Sources\Surgery\Surg\SurgeryWebApp\Aplikacja\PrzychodniaMvc\PrzychodniaMvc\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Sources\Surgery\Surg\SurgeryWebApp\Aplikacja\PrzychodniaMvc\PrzychodniaMvc\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Sources\Surgery\Surg\SurgeryWebApp\Aplikacja\PrzychodniaMvc\PrzychodniaMvc\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Sources\Surgery\Surg\SurgeryWebApp\Aplikacja\PrzychodniaMvc\PrzychodniaMvc\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Sources\Surgery\Surg\SurgeryWebApp\Aplikacja\PrzychodniaMvc\PrzychodniaMvc\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Sources\Surgery\Surg\SurgeryWebApp\Aplikacja\PrzychodniaMvc\PrzychodniaMvc\bin\roslyn\System.Collections.Immutable.dll
+D:\Sources\Surgery\Surg\SurgeryWebApp\Aplikacja\PrzychodniaMvc\PrzychodniaMvc\bin\roslyn\System.Reflection.Metadata.dll
+D:\Sources\Surgery\Surg\SurgeryWebApp\Aplikacja\PrzychodniaMvc\PrzychodniaMvc\bin\roslyn\vbc.exe
+D:\Sources\Surgery\Surg\SurgeryWebApp\Aplikacja\PrzychodniaMvc\PrzychodniaMvc\bin\roslyn\VBCSCompiler.exe
+D:\Sources\Surgery\Surg\SurgeryWebApp\Aplikacja\PrzychodniaMvc\PrzychodniaMvc\bin\roslyn\VBCSCompiler.exe.config
+D:\Sources\Surgery\Surg\SurgeryWebApp\Aplikacja\PrzychodniaMvc\PrzychodniaMvc\bin\PrzychodniaMvc.dll.config
+D:\Sources\Surgery\Surg\SurgeryWebApp\Aplikacja\PrzychodniaMvc\PrzychodniaMvc\bin\PrzychodniaMvc.dll
+D:\Sources\Surgery\Surg\SurgeryWebApp\Aplikacja\PrzychodniaMvc\PrzychodniaMvc\bin\PrzychodniaMvc.pdb
+D:\Sources\Surgery\Surg\SurgeryWebApp\Aplikacja\PrzychodniaMvc\PrzychodniaMvc\bin\Antlr3.Runtime.dll
+D:\Sources\Surgery\Surg\SurgeryWebApp\Aplikacja\PrzychodniaMvc\PrzychodniaMvc\bin\EntityFramework.dll
+D:\Sources\Surgery\Surg\SurgeryWebApp\Aplikacja\PrzychodniaMvc\PrzychodniaMvc\bin\EntityFramework.SqlServer.dll
+D:\Sources\Surgery\Surg\SurgeryWebApp\Aplikacja\PrzychodniaMvc\PrzychodniaMvc\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Sources\Surgery\Surg\SurgeryWebApp\Aplikacja\PrzychodniaMvc\PrzychodniaMvc\bin\Microsoft.Web.Infrastructure.dll
+D:\Sources\Surgery\Surg\SurgeryWebApp\Aplikacja\PrzychodniaMvc\PrzychodniaMvc\bin\Newtonsoft.Json.dll
+D:\Sources\Surgery\Surg\SurgeryWebApp\Aplikacja\PrzychodniaMvc\PrzychodniaMvc\bin\System.Web.Helpers.dll
+D:\Sources\Surgery\Surg\SurgeryWebApp\Aplikacja\PrzychodniaMvc\PrzychodniaMvc\bin\System.Web.Mvc.dll
+D:\Sources\Surgery\Surg\SurgeryWebApp\Aplikacja\PrzychodniaMvc\PrzychodniaMvc\bin\System.Web.Optimization.dll
+D:\Sources\Surgery\Surg\SurgeryWebApp\Aplikacja\PrzychodniaMvc\PrzychodniaMvc\bin\System.Web.Razor.dll
+D:\Sources\Surgery\Surg\SurgeryWebApp\Aplikacja\PrzychodniaMvc\PrzychodniaMvc\bin\System.Web.Webpages.Deployment.dll
+D:\Sources\Surgery\Surg\SurgeryWebApp\Aplikacja\PrzychodniaMvc\PrzychodniaMvc\bin\System.Web.Webpages.dll
+D:\Sources\Surgery\Surg\SurgeryWebApp\Aplikacja\PrzychodniaMvc\PrzychodniaMvc\bin\System.Web.Webpages.Razor.dll
+D:\Sources\Surgery\Surg\SurgeryWebApp\Aplikacja\PrzychodniaMvc\PrzychodniaMvc\bin\WebGrease.dll
+D:\Sources\Surgery\Surg\SurgeryWebApp\Aplikacja\PrzychodniaMvc\PrzychodniaMvc\bin\Antlr3.Runtime.pdb
+D:\Sources\Surgery\Surg\SurgeryWebApp\Aplikacja\PrzychodniaMvc\PrzychodniaMvc\bin\EntityFramework.xml
+D:\Sources\Surgery\Surg\SurgeryWebApp\Aplikacja\PrzychodniaMvc\PrzychodniaMvc\bin\EntityFramework.SqlServer.xml
+D:\Sources\Surgery\Surg\SurgeryWebApp\Aplikacja\PrzychodniaMvc\PrzychodniaMvc\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Sources\Surgery\Surg\SurgeryWebApp\Aplikacja\PrzychodniaMvc\PrzychodniaMvc\bin\Newtonsoft.Json.xml
+D:\Sources\Surgery\Surg\SurgeryWebApp\Aplikacja\PrzychodniaMvc\PrzychodniaMvc\bin\System.Web.Optimization.xml
+D:\Sources\Surgery\Surg\SurgeryWebApp\Aplikacja\PrzychodniaMvc\PrzychodniaMvc\bin\System.Web.Razor.xml
+D:\Sources\Surgery\Surg\SurgeryWebApp\Aplikacja\PrzychodniaMvc\PrzychodniaMvc\bin\System.Web.Webpages.xml
+D:\Sources\Surgery\Surg\SurgeryWebApp\Aplikacja\PrzychodniaMvc\PrzychodniaMvc\bin\System.Web.Webpages.Deployment.xml
+D:\Sources\Surgery\Surg\SurgeryWebApp\Aplikacja\PrzychodniaMvc\PrzychodniaMvc\bin\System.Web.Webpages.Razor.xml
+D:\Sources\Surgery\Surg\SurgeryWebApp\Aplikacja\PrzychodniaMvc\PrzychodniaMvc\bin\System.Web.Helpers.xml
+D:\Sources\Surgery\Surg\SurgeryWebApp\Aplikacja\PrzychodniaMvc\PrzychodniaMvc\bin\System.Web.Mvc.xml
+D:\Sources\Surgery\Surg\SurgeryWebApp\Aplikacja\PrzychodniaMvc\PrzychodniaMvc\obj\Debug\PrzychodniaMvc.dll
+D:\Sources\Surgery\Surg\SurgeryWebApp\Aplikacja\PrzychodniaMvc\PrzychodniaMvc\obj\Debug\PrzychodniaMvc.pdb
+D:\Sources\Surgery\Surg\SurgeryWebApp\Aplikacja\PrzychodniaMvc\PrzychodniaMvc\bin\JQueryUIHelpers.dll
+D:\Sources\Surgery\Surg\SurgeryWebApp\Aplikacja\PrzychodniaMvc\PrzychodniaMvc\bin\JQueryUIHelpers.xml
+D:\Sources\Surgery\Surg\SurgeryWebApp\Aplikacja\PrzychodniaMvc\PrzychodniaMvc\obj\Debug\PrzychodniaMvc.csprojResolveAssemblyReference.cache
