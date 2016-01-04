@@ -58,14 +58,14 @@
                     else if (User.Identity.IsAuthenticated &&
                          PrzychodniaMvc.Security.AuthorizeRolesAttribute.CheckUserRole(User.Identity.Name).Equals("Recepcjonista"))
                     {
-                        <li>@Html.ActionLink("O nas", "Onas", "Home")</li>
+                        <li>@Html.ActionLink("O nas", "Onas", "Przychodnia")</li>
                         <li>@Html.ActionLink("Kalendarz", "UtworzKalendarz", "KalendarzDlaRecepcjonisty")</li>
-                        <li>@Html.ActionLink("Kontakt", "Kontakt", "Home")</li>
+                        <li>@Html.ActionLink("Kontakt", "Kontakt", "Przychodnia")</li>
                     }
                     else
                     {
-                        <li>@Html.ActionLink("O nas", "Onas", "Home")</li>
-                        <li>@Html.ActionLink("Kontakt", "Kontakt", "Home")</li>
+                        <li>@Html.ActionLink("O nas", "Onas", "Przychodnia")</li>
+                        <li>@Html.ActionLink("Kontakt", "Kontakt", "Przychodnia")</li>
                     }
                 </ul>
                 @Html.Partial("_LoginPartial")
