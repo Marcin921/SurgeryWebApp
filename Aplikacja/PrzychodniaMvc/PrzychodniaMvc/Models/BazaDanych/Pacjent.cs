@@ -11,7 +11,8 @@ namespace PrzychodniaMvc.Models.BazaDanych
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Pacjent
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,13 +22,20 @@ namespace PrzychodniaMvc.Models.BazaDanych
         }
     
         public int IdPacjenta { get; set; }
+        [Required]
         public string Imie { get; set; }
+        [Required]
         public string Nazwisko { get; set; }
+        [Required]
         public string Adres { get; set; }
+        [Required]
         public string Pesel { get; set; }
+        [Required]
         public string NumerTelefonu { get; set; }
         public bool Zatwierdzono { get; set; }
+        [Required]
         public string Miasto { get; set; }
+        [Required]
         public string KodPocztowy { get; set; }
         public Nullable<int> IdUzytkownika { get; set; }
     

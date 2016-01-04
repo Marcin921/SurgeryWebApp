@@ -19,6 +19,8 @@
     <Property Name="Nazwisko" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Adres" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
     <Property Name="DataZatrudnienia" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DataRozpWizyt" Type="DateTime" />
+    <Property Name="DataZakWizyt" Type="DateTime" />
     <Property Name="NumerTelefonu" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
     <Property Name="IdUzytkownika" Type="Int32" />
     <NavigationProperty Name="Uzytkownik" Relationship="Self.FK_Lekarz_Uzytkownik" FromRole="Lekarz" ToRole="Uzytkownik" />
@@ -254,8 +256,8 @@
       <PropertyRef Name="IdRejestracji" />
     </Key>
     <Property Name="IdRejestracji" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Data" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="Godzina" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="true" />
+    <Property Name="DataRozp" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DataZak" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="CzyZajeta" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="true" />
     <Property Name="IdLekarza" Type="Int32" Nullable="false" />
     <Property Name="IdPacjenta" Type="Int32" />
@@ -286,7 +288,7 @@
       <PropertyRef Name="IdWizyty" />
     </Key>
     <Property Name="IdWizyty" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Koszt" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="true" />
+    <Property Name="Koszt" Type="String" Nullable="true" MaxLength="3" FixedLength="true" Unicode="true" />
     <Property Name="IdRejestracji" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Rejestracja" Relationship="PrzychodniaBDModel4.FK_Wizyta_Rejestracja" FromRole="Wizyta" ToRole="Rejestracja" />
   </EntityType>

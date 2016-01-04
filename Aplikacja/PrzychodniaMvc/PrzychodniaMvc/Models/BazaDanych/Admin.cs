@@ -11,14 +11,18 @@ namespace PrzychodniaMvc.Models.BazaDanych
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Admin
     {
         public int IdAdmina { get; set; }
+        [Required]
         public string Imie { get; set; }
+        [Required]
         public string Nazwisko { get; set; }
         public Nullable<int> IdUzytkownika { get; set; }
-    
+
+        [Required]
         public virtual Uzytkownik Uzytkownik { get; set; }
     }
 }

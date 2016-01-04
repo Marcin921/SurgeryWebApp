@@ -38,8 +38,7 @@ namespace PrzychodniaMvc.Models.BazaDanych
         [Required]
         public string KodPocztowy { get; set; }
         public Nullable<int> IdUzytkownika { get; set; }
-
-        [Required]
+    
         public virtual Uzytkownik Uzytkownik { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Rejestracja> Rejestracja { get; set; }

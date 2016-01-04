@@ -62,10 +62,11 @@ namespace PrzychodniaMvc.Controllers
                 PrzychodniaBDEntities7 dc = new PrzychodniaBDEntities7();
                 Uzytkownik u = dc.Uzytkownik.FirstOrDefault(t => (t.Login == p.Uzytkownik.Login && 
                                                             t.Haslo == p.Uzytkownik.Haslo));
+                Pacjent ppp = dc.Pacjent.FirstOrDefault(pp => pp.Uzytkownik.IdUzytkownika == u.IdUzytkownika);
                 if (u != null)
                 {
                     FormsAuthentication.SetAuthCookie(u.Login, true);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("UtworzKalendarz", "KalendarzDlaPacjenta");
                 }
                 else
                 {
@@ -78,6 +79,32 @@ namespace PrzychodniaMvc.Controllers
         {
             FormsAuthentication.SignOut();
             return RedirectToAction("Index", "Home");
+        }
+
+
+        public ActionResult EdytujKonto(Pacjent p)
+        {
+            PrzychodniaBDEntities7 dc = new PrzychodniaBDEntities7();
+            if (ModelState.IsValid || p.NumerTelefonu != null)
+            {
+                Pacjent pp = dc.Pacjent.FirstOrDefault(ppp => ppp.Uzytkownik.Login.Equals(User.Identity.Name));
+                if (p.NumerTelefonu != null)
+                {
+                    pp.NumerTelefonu = p.NumerTelefonu;
+                }
+                else
+                {
+                    pp.Imie = p.Imie;
+                    pp.Nazwisko = p.Nazwisko;
+                    pp.KodPocztowy = p.KodPocztowy;
+                    pp.Miasto = p.Miasto;
+                    pp.NumerTelefonu = pp.NumerTelefonu;
+                    pp.Pesel = pp.Pesel;
+                }
+                dc.SaveChanges();
+            }
+            Pacjent pac = dc.Pacjent.FirstOrDefault(ppp => ppp.Uzytkownik.Login.Equals(User.Identity.Name));
+            return View(pac);
         }
     }
 }

@@ -21,8 +21,8 @@ namespace PrzychodniaMvc.Models.BazaDanych
         }
     
         public int IdRejestracji { get; set; }
-        public System.DateTime Data { get; set; }
-        public string Godzina { get; set; }
+        public System.DateTime DataRozp { get; set; }
+        public System.DateTime DataZak { get; set; }
         public string CzyZajeta { get; set; }
         public int IdLekarza { get; set; }
         public Nullable<int> IdPacjenta { get; set; }

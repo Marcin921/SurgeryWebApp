@@ -71,9 +71,15 @@
             </div>
         </div>
             <div class="col-md-offset-2 col-md-10">
+                @if (Model.Lekarz.IdLekarza == 0)
+                {
                 <input type="Submit" title="Zapisz" value="Utworz Lekarza" class="btn btn-success" />
-                 @Html.ActionLink("Przejdź do edycji dni i godzin pracy", "EdytujDniIGodzinyPracy", new { @id = Model.Lekarz.IdLekarza }, new { @class = "btn btn-primary" })
-            </div>
+                }
+                else
+                {
+                   @Html.ActionLink("Przejdź do edycji dni i godzin pracy", "EdytujDniIGodzinyPracy", new { @id = Model.Lekarz.IdLekarza }, new { @class = "btn btn-primary" })
+                }
+             </div>
     </div>
 }
 

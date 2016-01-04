@@ -13,36 +13,75 @@
           @Scripts.Render("~/bundles/jquery")
           @Scripts.Render("~/bundles/jqueryval")
           @Scripts.Render("~/bundles/jqueryui")
-
+    
 </head>
 <body>
+    <img src="~/Content/images/tlo.jpg" style="width: 100%" height="200" />
     <div class="navbar navbar-inverse navbar-fixed-top">
+        
         <div class="container">
+            
             <div class="navbar-header">
+            @if (User.Identity.IsAuthenticated &&
+                        (PrzychodniaMvc.Security.AuthorizeRolesAttribute.CheckUserRole(User.Identity.Name).Equals("Pacjent")
+                ||  PrzychodniaMvc.Security.AuthorizeRolesAttribute.CheckUserRole(User.Identity.Name).Equals("Recepcjonista")))
+            {
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            }
+            else
+            {
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+            }
+
                 @Html.ActionLink("Przychodnia lekarska", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("O nas", "Onas", "Home")</li>
-                    <li>@Html.ActionLink("Kontakt", "Kontakt", "Home")</li>
+                    @if (User.Identity.IsAuthenticated &&
+                    PrzychodniaMvc.Security.AuthorizeRolesAttribute.CheckUserRole(User.Identity.Name).Equals("Pacjent"))
+                    {
+                    <li>@Html.ActionLink("O nas", "Onas", "Przychodnia")</li>
+                    <li>@Html.ActionLink("Kalendarz", "UtworzKalendarz", "KalendarzDlaPacjenta")</li>
+                    <li>@Html.ActionLink("Moje Konto", "EdytujKonto", "Pacjent")</li>
+                    <li>@Html.ActionLink("Kontakt", "Kontakt", "Przychodnia")</li>
+                    }
+                    else if (User.Identity.IsAuthenticated &&
+                         PrzychodniaMvc.Security.AuthorizeRolesAttribute.CheckUserRole(User.Identity.Name).Equals("Recepcjonista"))
+                    {
+                        <li>@Html.ActionLink("O nas", "Onas", "Home")</li>
+                        <li>@Html.ActionLink("Kalendarz", "UtworzKalendarz", "KalendarzDlaRecepcjonisty")</li>
+                        <li>@Html.ActionLink("Kontakt", "Kontakt", "Home")</li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("O nas", "Onas", "Home")</li>
+                        <li>@Html.ActionLink("Kontakt", "Kontakt", "Home")</li>
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
+                
             </div>
         </div>
     </div>
-
+ 
+       
     <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            </footer>
+        </div>
 
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>

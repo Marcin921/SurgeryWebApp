@@ -29,11 +29,8 @@ namespace PrzychodniaMvc.Models.BazaDanych
         public string CzasJednejWizyty { get; set; }
         public int IdLekarza { get; set; }
         public int IdGabinetu { get; set; }
-        public IEnumerable<SelectListItem> ListaDniTygodnia;
-       
-                   
-      
-
+        public List<SelectListItem> listaDniTygodnia = new List<SelectListItem>();
+    
         public virtual Lekarz Lekarz { get; set; }
     }
 }

@@ -12,6 +12,7 @@ namespace PrzychodniaMvc.Models.BazaDanych
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.Web.Mvc;
 
     public partial class DzienGodzinaPracyLekarza
     {
@@ -28,6 +29,7 @@ namespace PrzychodniaMvc.Models.BazaDanych
         public string CzasJednejWizyty { get; set; }
         public int IdLekarza { get; set; }
         public int IdGabinetu { get; set; }
+        public List<SelectListItem> listaDniTygodnia = new List<SelectListItem>();
     
         public virtual Lekarz Lekarz { get; set; }
     }

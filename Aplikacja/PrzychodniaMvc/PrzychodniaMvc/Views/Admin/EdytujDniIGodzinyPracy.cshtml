@@ -1,27 +1,31 @@
-﻿@model IEnumerable<PrzychodniaMvc.Models.BazaDanych.DzienGodzinaPracyLekarza>
+﻿@model IList<PrzychodniaMvc.Models.BazaDanych.DzienGodzinaPracyLekarza>
 
 @{
     ViewBag.Title = "Lista dni i godzin pracy doktora";
 }
 
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
 <h2>@ViewBag.Title</h2>
 
 <p>
-    @Html.ActionLink("Utwórz nowy dzień pracy", "UtworzDzienPracy", "Admin", new { @class = "btn btn-primary" })
+    @Html.ActionLink("Utwórz nowy dzień pracy", "UtworzDzienIGodzinePracy", "Admin", new { @id = this.ViewContext.RouteData.Values["id"], @generuj = false },  new { @class = "btn btn-primary" })
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.DzienTygodnia)
+            @Html.DisplayNameFor(model => model.ToList()[0].DzienTygodnia)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.GodzinaRozp)
+            @Html.DisplayNameFor(model => model.ToList()[0].GodzinaRozp)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.GodzinaZak)
+            @Html.DisplayNameFor(model => model.ToList()[0].GodzinaZak)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CzasJednejWizyty)
+            @Html.DisplayNameFor(model => model.ToList()[0].CzasJednejWizyty)
         </th>
         <th></th>
     </tr>
@@ -47,3 +51,11 @@
 }
 
 </table>
+
+    if (Model.Count() != 0)
+    {
+
+   @Html.ActionLink("Przejdz do generowania terminow", "GenerujTerminy", "Admin", new { @id = this.ViewContext.RouteData.Values["id"]}, new { @class = "btn btn-primary" })
+}
+}
+

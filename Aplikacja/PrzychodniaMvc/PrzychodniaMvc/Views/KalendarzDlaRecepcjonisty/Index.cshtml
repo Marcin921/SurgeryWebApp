@@ -1,0 +1,136 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DHXScheduler initialization sample</title>
+    <style>
+        body {
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+
+    <div style="height:700px;width:900px;margin:0 auto" class="scheduler_container">
+        <div>
+            <br />
+            Wybierz lekarza:
+            <br />
+            @Html.DropDownList("ListaLekarzy", null, htmlAttributes: new { @class = "form-control", @onchange = "CallChangefunc1(this.value)" })
+            <script>
+                function CallChangefunc1(val) {
+                    scheduler.clearAll();
+                    scheduler.load('@Url.Action("ZmianaIdLekarza", new { lekid = "js-id" })'
+                    .replace("js-id", encodeURIComponent(val)));
+                }
+            </script>
+        </div>
+
+        <div>
+            <br />
+            Wybierz Pacjenta:
+            <br />
+            @Html.DropDownList("ListaPacjentow", null, htmlAttributes: new { @class = "form-control", @onchange = "CallChangefunc2(this.value)" })
+            <br />
+            <script>
+                function CallChangefunc2(val) {
+                    scheduler.clearAll();
+                    scheduler.load('@Url.Action("ZmianaIdPacjenta", new { pacid = "js-id" })'
+                    .replace("js-id", encodeURIComponent(val)));
+                }
+            </script>
+        </div>
+
+        @Html.Raw(Model.Render())
+        <script type="text/javascript">
+
+            scheduler._click.buttons.save = function (id) {
+                var ev = scheduler.getEvent(id);
+                var color = ev.color;
+                if (color == "green") {
+                    scheduler.config.icons_select = ["icon_save", "icon_cancel"];
+                    scheduler.locale.labels.icon_save = "Akceptuj rezerwację terminu";
+                    scheduler.locale.labels.icon_cancel = "Anuluj prosbe o rezerwacje terminu";
+
+                    scheduler.load('@Url.Action("RezerwujTermin", new { id = "js-id" })'
+                   .replace("js-id", encodeURIComponent(id)));
+                }
+                else if (color == "blue") {
+                    scheduler.config.icons_select = ["icon_cancel"];
+                    scheduler.locale.labels.icon_cancel = "Anuluj akceptacje terminu";
+                    scheduler.load('@Url.Action("ZatwierdzTermin", new { id = "js-id" })'
+                   .replace("js-id", encodeURIComponent(id)));
+                }
+            };
+            scheduler.attachEvent("onBeforeDrag", function (id, mode, e) {
+                //any custom logic here
+                return false;
+            });
+            scheduler._click.buttons.cancel = function (id) {
+                var ev = scheduler.getEvent(id);
+                var color = ev.color;
+                if (color == "blue") {
+                    var selectedanswer = document.getElementById("ListaPacjentow").selectedIndex;
+                    if (selectedanswer != 0) {
+                        scheduler.locale.labels.icon_save = "Popros o rezerwację terminu";
+                        scheduler.config.icons_select = ["icon_save"];
+                    }
+                    else {
+                        scheduler.config.icons_select = [];
+                    }
+                    scheduler.load('@Url.Action("AnulujRezerwacjeTerminu", new { id = "js-id" })'
+                   .replace("js-id", encodeURIComponent(id)));
+                }
+                else if (color == "yellow") {
+                    scheduler.config.icons_select = ["icon_save", "icon_cancel"];
+                    scheduler.locale.labels.icon_save = "Akceptuj rezerwację terminu";
+                    scheduler.locale.labels.icon_cancel = "Anuluj prosbe o rezerwacje terminu";
+                    scheduler.load('@Url.Action("AnulujAkceptacjeTerminu", new { id = "js-id" })'
+                   .replace("js-id", encodeURIComponent(id)));
+                }
+            };
+
+            scheduler.attachEvent("onClick", function (event_id) {
+                var ev = scheduler.getEvent(event_id);
+                var color = ev.color;
+                if (color == "green")
+                {
+                    var selectedanswer = document.getElementById("ListaPacjentow").selectedIndex;
+                    if (selectedanswer != 0) {
+                        scheduler.locale.labels.icon_save = "Popros o rezerwację terminu";
+                        scheduler.config.icons_select = ["icon_save"];
+                    }
+                    else {
+                        scheduler.config.icons_select = [];
+                    }
+                }
+                else if (color == "blue") {
+                    scheduler.config.icons_select = ["icon_save", "icon_cancel"];
+                    scheduler.locale.labels.icon_save = "Akceptuj rezerwację terminu";
+                    scheduler.locale.labels.icon_cancel = "Anuluj prosbe o rezerwacje terminu";
+                }
+                else if (color == "yellow") {
+                    scheduler.config.icons_select = ["icon_cancel"];
+                    scheduler.locale.labels.icon_cancel = "Anuluj akceptacje terminu";
+                }
+                else if (color == "red") {
+                    scheduler.config.icons_select = [];
+                }
+                return true;
+            });
+
+            scheduler.attachEvent("onDblClick", function (event_id) {
+                var ev = scheduler.getEvent(event_id);
+                var color = ev.color;
+                scheduler.load('@Url.Action("Zapisz", new { id = "js-id", color = "js-color" })'
+               .replace("js-id", encodeURIComponent(event_id))
+               .replace("js-color", encodeURIComponent(color)));
+                return false;
+            });
+        </script>
+    </div>
+</body>
+</html>

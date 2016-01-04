@@ -12,7 +12,7 @@ namespace PrzychodniaMvc.Models.ManagerBazyDanych
         {
             using (PrzychodniaBDEntities7 db = new PrzychodniaBDEntities7())
             {
-                Uzytkownik u = db.Uzytkownik.Where(o => o.Login.ToLower().Equals(login))?.FirstOrDefault();
+                Uzytkownik u = db.Uzytkownik.Where(o => o.Login.ToLower().Equals(login)).FirstOrDefault();
                 if (u != null)
                 {
                     var roles = from q in db.RolaUzytkownika

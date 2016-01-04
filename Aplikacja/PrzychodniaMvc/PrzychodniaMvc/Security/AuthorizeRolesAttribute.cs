@@ -15,6 +15,7 @@ namespace PrzychodniaMvc.Security
         {
             this.userAssignedRoles = roles;
         }
+
         protected override bool AuthorizeCore(HttpContextBase httpContext)
         {
             bool zautoryzowany = false;
@@ -33,6 +34,12 @@ namespace PrzychodniaMvc.Security
         protected override void HandleUnauthorizedRequest(AuthorizationContext filterContext)
         {
             filterContext.Result = new RedirectResult("~/Home/UnAuthorized");
+        }
+
+        public static string CheckUserRole(string name)
+        {
+            PrzychodniaBDEntities7 db = new PrzychodniaBDEntities7();
+            return db.RolaUzytkownika.FirstOrDefault(r => r.Uzytkownik.Login == name).Rola.NazwaRoli;
         }
     }
 

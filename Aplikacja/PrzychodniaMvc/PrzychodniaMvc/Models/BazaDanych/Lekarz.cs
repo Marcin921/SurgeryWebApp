@@ -36,6 +36,12 @@ namespace PrzychodniaMvc.Models.BazaDanych
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public System.DateTime DataZatrudnienia { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public Nullable<System.DateTime> DataRozpWizyt { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public Nullable<System.DateTime> DataZakWizyt { get; set; }
         [Required]
         public string NumerTelefonu { get; set; }
         public Nullable<int> IdUzytkownika { get; set; }

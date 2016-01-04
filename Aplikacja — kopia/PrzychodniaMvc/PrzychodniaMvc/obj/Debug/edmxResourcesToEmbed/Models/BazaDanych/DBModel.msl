@@ -19,6 +19,8 @@
           <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
           <ScalarProperty Name="Adres" ColumnName="Adres" />
           <ScalarProperty Name="DataZatrudnienia" ColumnName="DataZatrudnienia" />
+          <ScalarProperty Name="DataRozpWizyt" ColumnName="DataRozpWizyt" />
+          <ScalarProperty Name="DataZakWizyt" ColumnName="DataZakWizyt" />
           <ScalarProperty Name="NumerTelefonu" ColumnName="NumerTelefonu" />
           <ScalarProperty Name="IdUzytkownika" ColumnName="IdUzytkownika" />
         </MappingFragment>
@@ -99,8 +101,8 @@
           <ScalarProperty Name="IdPacjenta" ColumnName="IdPacjenta" />
           <ScalarProperty Name="IdLekarza" ColumnName="IdLekarza" />
           <ScalarProperty Name="CzyZajeta" ColumnName="CzyZajeta" />
-          <ScalarProperty Name="Godzina" ColumnName="Godzina" />
-          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="DataZak" ColumnName="DataZak" />
+          <ScalarProperty Name="DataRozp" ColumnName="DataRozp" />
           <ScalarProperty Name="IdRejestracji" ColumnName="IdRejestracji" />
         </MappingFragment>
       </EntityTypeMapping>

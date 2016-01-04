@@ -30,6 +30,8 @@
     <Property Name="Nazwisko" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Adres" Type="nchar" MaxLength="50" Nullable="false" />
     <Property Name="DataZatrudnienia" Type="date" Nullable="false" />
+    <Property Name="DataRozpWizyt" Type="date" />
+    <Property Name="DataZakWizyt" Type="date" Nullable="true" />
     <Property Name="NumerTelefonu" Type="nchar" MaxLength="10" Nullable="false" />
     <Property Name="IdUzytkownika" Type="int" />
   </EntityType>
@@ -65,8 +67,8 @@
       <PropertyRef Name="IdRejestracji" />
     </Key>
     <Property Name="IdRejestracji" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Data" Type="date" Nullable="false" />
-    <Property Name="Godzina" Type="nchar" MaxLength="5" Nullable="false" />
+    <Property Name="DataRozp" Type="date" Nullable="false" />
+    <Property Name="DataZak" Type="date" Nullable="false" />
     <Property Name="CzyZajeta" Type="nchar" MaxLength="1" Nullable="false" />
     <Property Name="IdLekarza" Type="int" Nullable="false" />
     <Property Name="IdPacjenta" Type="int" />
@@ -115,7 +117,7 @@
       <PropertyRef Name="IdWizyty" />
     </Key>
     <Property Name="IdWizyty" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Koszt" Type="nchar" MaxLength="3" Nullable="false" />
+    <Property Name="Koszt" Type="nchar" MaxLength="3" Nullable="true" />
     <Property Name="IdRejestracji" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="FK_Admin_Uzytkownik">

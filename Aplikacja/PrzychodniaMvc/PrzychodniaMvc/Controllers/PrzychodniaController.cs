@@ -13,5 +13,13 @@ namespace PrzychodniaMvc.Controllers
         {
             return View();
         }
+        public ActionResult Kontakt()
+        {
+            return View();
+        }
+        public ActionResult Onas()
+        {
+            return View();
+        }
     }
 }
