@@ -20,7 +20,7 @@ namespace PrzychodniaMvc.Controllers
     public class KalendarzDlaPacjentaController : Controller
     {
         public static int LekId;
-        public static int PacId;
+        public static Pacjent Pacjent;
 
         [AuthorizeRoles("Pacjent")]
         public ActionResult Index()
@@ -84,7 +84,7 @@ namespace PrzychodniaMvc.Controllers
             }
            
             ViewBag.ListaLekarzy = ListaLekarzy;
-            //var ListaLekarzy = new SelectListItem();
+            ViewBag.Zweryfikowano = Pacjent.Zatwierdzono;
 
            return View(scheduler);        
         }
@@ -92,7 +92,7 @@ namespace PrzychodniaMvc.Controllers
         public ActionResult UtworzKalendarz()
         {
             PrzychodniaBDEntities7 dc = new PrzychodniaBDEntities7();
-            PacId = dc.Pacjent.FirstOrDefault(pp => pp.Uzytkownik.Login == HttpContext.User.Identity.Name).IdPacjenta;
+            Pacjent = dc.Pacjent.FirstOrDefault(pp => pp.Uzytkownik.Login == HttpContext.User.Identity.Name);
             return Redirect("~/KalendarzDlaPacjenta/Index");
         }
         [AuthorizeRoles("Pacjent")]
@@ -107,7 +107,7 @@ namespace PrzychodniaMvc.Controllers
             PrzychodniaBDEntities7 dc = new PrzychodniaBDEntities7();
             var r = dc.Rejestracja.FirstOrDefault(rr => rr.IdRejestracji == id);
             r.CzyZajeta = "Y";
-            r.IdPacjenta = PacId;
+            r.IdPacjenta = Pacjent.IdPacjenta;
             dc.SaveChanges();
             return RedirectToAction("Data");
         }
@@ -123,6 +123,7 @@ namespace PrzychodniaMvc.Controllers
         [AuthorizeRoles("Pacjent")]
         public ContentResult Data()
         {
+            int PacId = Pacjent.IdPacjenta;
             PrzychodniaBDEntities7 dc = new PrzychodniaBDEntities7();
             List<object> items = new List<object>();
             if ( LekId == 0)
@@ -177,13 +178,7 @@ namespace PrzychodniaMvc.Controllers
                 items.AddRange(items_red);
                 items.AddRange(items_red);
             }
-               
-           
-            /*   var items_red = from r in dc.Rejestracja
-                            join w in dc.Wizyta on r.IdRejestracji equals w.IdRejestracji into RecWiz
-                            from w in RecWiz.DefaultIfEmpty()
-                            select
-                            new { id = r.IdRejestracji, text = r.IdLekarza, start_date = r.DataRozp, end_date = r.DataZak, color =  "red"};*/
+              
             var data = new SchedulerAjaxData(items);
 
             return (ContentResult)data;
@@ -197,7 +192,7 @@ namespace PrzychodniaMvc.Controllers
             if(r.CzyZajeta.Equals("N"))
             {
                 r.CzyZajeta = "Y";
-                r.IdPacjenta = PacId;
+                r.IdPacjenta = Pacjent.IdPacjenta;
             }
             else if(r.CzyZajeta.Equals("Y") && color.Equals("blue"))
             {

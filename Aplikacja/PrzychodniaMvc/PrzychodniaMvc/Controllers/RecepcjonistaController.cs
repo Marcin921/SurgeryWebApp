@@ -1,4 +1,5 @@
 ﻿using PrzychodniaMvc.Models.BazaDanych;
+using PrzychodniaMvc.Security;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,72 @@ namespace PrzychodniaMvc.Controllers
         {
             return View();
         }
-        
+        public ActionResult WeryfikujPacjentow()
+        {
+            PrzychodniaBDEntities7 dc = new PrzychodniaBDEntities7();
+            var p = dc.Pacjent.OrderByDescending(pp => pp.Zatwierdzono ).ToList();
+            return View(p);
+        }
+
+        public ActionResult WeryfikujPacjenta(int? id)
+        {
+            PrzychodniaBDEntities7 dc = new PrzychodniaBDEntities7();
+            Pacjent p = dc.Pacjent.FirstOrDefault(t => t.IdPacjenta == id);
+            p.Zatwierdzono = true;
+            dc.SaveChanges();
+            return RedirectToAction("WeryfikujPacjentow");
+        }
+
+        public ActionResult CofnijWeryfikacjePacjenta(int? id)
+        {
+            PrzychodniaBDEntities7 dc = new PrzychodniaBDEntities7();
+            Pacjent p = dc.Pacjent.FirstOrDefault(t => t.IdPacjenta == id);
+            p.Zatwierdzono = false;
+            dc.SaveChanges();
+            return RedirectToAction("WeryfikujPacjentow");
+        }
+
+        [AuthorizeRoles("Recepcjonista")]
+        public ActionResult EdytujPacjenta(Pacjent p, Nullable<int> id)
+        {
+            PrzychodniaBDEntities7 dc = new PrzychodniaBDEntities7();
+            Pacjent pp = dc.Pacjent.FirstOrDefault(ppp => ppp.IdPacjenta == id);
+            if (ModelState.IsValid)
+            {
+                pp.Imie = p.Imie;
+                pp.Nazwisko = p.Nazwisko;
+                pp.KodPocztowy = p.KodPocztowy;
+                pp.Miasto = p.Miasto;
+                pp.NumerTelefonu = p.NumerTelefonu;
+                pp.Pesel = p.Pesel;
+                pp.Zatwierdzono = p.Zatwierdzono;
+                dc.SaveChanges();
+            }
+            return View(pp);
+        }
+
+        [AuthorizeRoles("Recepcjonista")]
+        public ActionResult UtworzPacjenta(Pacjent p)
+        {
+            PrzychodniaBDEntities7 dc = new PrzychodniaBDEntities7();
+            if (ModelState.IsValid)
+            {
+                dc.Pacjent.Add(p);
+                dc.SaveChanges();
+
+                Uzytkownik u = dc.Uzytkownik.FirstOrDefault(t => t.Login == p.Uzytkownik.Login);
+                if (u.IdUzytkownika != 0)
+                {
+                    RolaUzytkownika rolaPacjenta = new RolaUzytkownika();
+                    rolaPacjenta.IdUzytkownika = (int)p.IdUzytkownika;
+                    rolaPacjenta.IdRoli = 2;
+                    dc.RolaUzytkownika.Add(rolaPacjenta);
+                }
+                dc.SaveChanges();
+            }
+            return View();
+        }
+
         public ActionResult Zaloguj()
         {
             return View();
@@ -23,12 +89,6 @@ namespace PrzychodniaMvc.Controllers
         [HttpPost]
         public ActionResult Zaloguj(Recepcjonista r)
         {
-            if (r.Uzytkownik.Haslo == null || r.Uzytkownik.Login == null)
-            {
-                return View(r);
-            }
-            else
-            {
                 PrzychodniaBDEntities7 dc = new PrzychodniaBDEntities7();
                 Uzytkownik u = dc.Uzytkownik.FirstOrDefault(t => (t.Login == r.Uzytkownik.Login &&
                                                             t.Haslo == r.Uzytkownik.Haslo));
@@ -39,10 +99,9 @@ namespace PrzychodniaMvc.Controllers
                 }
                 else
                 {
+                    ViewBag.BladLogowania = true;
                 }
-                // If we got this far, something failed, redisplay form
                 return View(r);
-            }
         }
         public ActionResult Wyloguj()
         {

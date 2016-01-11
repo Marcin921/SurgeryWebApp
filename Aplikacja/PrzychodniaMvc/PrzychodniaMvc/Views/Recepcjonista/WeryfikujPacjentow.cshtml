@@ -1,0 +1,49 @@
+﻿@model IEnumerable<PrzychodniaMvc.Models.BazaDanych.Pacjent>
+
+@{
+    ViewBag.Title = "Weryfikacja Pacjentóww";
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Imie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nazwisko)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pesel)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Imie)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nazwisko)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pesel)
+        </td>
+        @if (!item.Zatwierdzono)
+        {
+        <td>
+            @Html.ActionLink("Edytuj", "EdytujPacjenta", new { id = item.IdPacjenta }, new { @class = "btn btn-primary" })
+            @Html.ActionLink("Zweryfikuj", "WeryfikujPacjenta", new { id = item.IdPacjenta}, new { @class = "btn btn-success" })
+        </td>
+        }
+        else
+        {
+           <td>
+                @Html.ActionLink("Edytuj", "EdytujPacjenta", new { id = item.IdPacjenta }, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Cofnij Weryfikacje", "CofnijWeryfikacjePacjenta", new { id = item.IdPacjenta }, new { @class = "btn btn-danger" })
+            </td>
+        }
+    </tr>
+}
+
+</table>

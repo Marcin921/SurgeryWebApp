@@ -142,6 +142,7 @@ D:\Repoz\Aplikacja — kopia\PrzychodniaMvc\PrzychodniaMvc\bin\PrzychodniaMvc.dl
 D:\Repoz\Aplikacja — kopia\PrzychodniaMvc\PrzychodniaMvc\bin\PrzychodniaMvc.dll
 D:\Repoz\Aplikacja — kopia\PrzychodniaMvc\PrzychodniaMvc\bin\PrzychodniaMvc.pdb
 D:\Repoz\Aplikacja — kopia\PrzychodniaMvc\PrzychodniaMvc\bin\Antlr3.Runtime.dll
+D:\Repoz\Aplikacja — kopia\PrzychodniaMvc\PrzychodniaMvc\bin\DHTMLX.dll
 D:\Repoz\Aplikacja — kopia\PrzychodniaMvc\PrzychodniaMvc\bin\EntityFramework.dll
 D:\Repoz\Aplikacja — kopia\PrzychodniaMvc\PrzychodniaMvc\bin\EntityFramework.SqlServer.dll
 D:\Repoz\Aplikacja — kopia\PrzychodniaMvc\PrzychodniaMvc\bin\JQueryUIHelpers.dll
@@ -157,6 +158,8 @@ D:\Repoz\Aplikacja — kopia\PrzychodniaMvc\PrzychodniaMvc\bin\System.Web.Webpag
 D:\Repoz\Aplikacja — kopia\PrzychodniaMvc\PrzychodniaMvc\bin\System.Web.Webpages.Razor.dll
 D:\Repoz\Aplikacja — kopia\PrzychodniaMvc\PrzychodniaMvc\bin\WebGrease.dll
 D:\Repoz\Aplikacja — kopia\PrzychodniaMvc\PrzychodniaMvc\bin\Antlr3.Runtime.pdb
+D:\Repoz\Aplikacja — kopia\PrzychodniaMvc\PrzychodniaMvc\bin\DHTMLX.pdb
+D:\Repoz\Aplikacja — kopia\PrzychodniaMvc\PrzychodniaMvc\bin\DHTMLX.xml
 D:\Repoz\Aplikacja — kopia\PrzychodniaMvc\PrzychodniaMvc\bin\EntityFramework.xml
 D:\Repoz\Aplikacja — kopia\PrzychodniaMvc\PrzychodniaMvc\bin\EntityFramework.SqlServer.xml
 D:\Repoz\Aplikacja — kopia\PrzychodniaMvc\PrzychodniaMvc\bin\JQueryUIHelpers.xml
@@ -172,6 +175,3 @@ D:\Repoz\Aplikacja — kopia\PrzychodniaMvc\PrzychodniaMvc\bin\System.Web.Mvc.xm
 D:\Repoz\Aplikacja — kopia\PrzychodniaMvc\PrzychodniaMvc\obj\Debug\PrzychodniaMvc.dll
 D:\Repoz\Aplikacja — kopia\PrzychodniaMvc\PrzychodniaMvc\obj\Debug\PrzychodniaMvc.pdb
 D:\Repoz\Aplikacja — kopia\PrzychodniaMvc\PrzychodniaMvc\obj\Debug\PrzychodniaMvc.csprojResolveAssemblyReference.cache
-D:\Repoz\Aplikacja — kopia\PrzychodniaMvc\PrzychodniaMvc\bin\DHTMLX.dll
-D:\Repoz\Aplikacja — kopia\PrzychodniaMvc\PrzychodniaMvc\bin\DHTMLX.xml
-D:\Repoz\Aplikacja — kopia\PrzychodniaMvc\PrzychodniaMvc\bin\DHTMLX.pdb

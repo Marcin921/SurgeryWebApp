@@ -4,6 +4,14 @@
     ViewBag.Title = "Logowanie";
 }
 <h2>@ViewBag.Title</h2>
+@if (@ViewBag.BladLogowania == true)
+{
+<div>
+    <font color="red" , size="3">
+        <p align="center">Wprowadzone dane są niepoprawne. Spróbuj ponownie.</p>
+    </font>
+</div>
+}
 <div class="row">
     <div class="col-md-8">
         <section id="loginForm">

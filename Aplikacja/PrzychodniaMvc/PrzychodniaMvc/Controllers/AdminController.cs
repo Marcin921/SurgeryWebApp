@@ -26,12 +26,6 @@ namespace PrzychodniaMvc.Controllers
         // GET: Pacjent
         public ActionResult Zaloguj(Admin a)
         {
-            if (a.Uzytkownik.Haslo == null || a.Uzytkownik.Login == null)
-            {
-                return View(a);
-            }
-            else
-            {
                 PrzychodniaBDEntities7 dc = new PrzychodniaBDEntities7();
                 Uzytkownik u = dc.Uzytkownik.FirstOrDefault(t => (t.Login == a.Uzytkownik.Login &&
                                                             t.Haslo == a.Uzytkownik.Haslo));
@@ -42,10 +36,10 @@ namespace PrzychodniaMvc.Controllers
                 }
                 else
                 {
+                    ViewBag.BladLogowania = true;
                 }
                 // If we got this far, something failed, redisplay form
                 return View(a);
-            }
         }
         [AuthorizeRoles("Administrator")]
         public ActionResult WyswietlUzytkownikow()

@@ -377,7 +377,9 @@
     <Content Include="Scripts\jquery-ui.unobtrusive-3.0.0.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Content\images\tlo.jpg" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -482,6 +484,13 @@
     <Content Include="Views\Przychodnia\Kontakt.cshtml" />
     <Content Include="Views\Admin\EdytujPacjenta.cshtml" />
     <Content Include="Views\Recepcjonista\Zaloguj.cshtml" />
+    <Content Include="Views\Przychodnia\AdminOnly.cshtml" />
+    <Content Include="Views\Przychodnia\UnAuthorized.cshtml" />
+    <Content Include="Views\Przychodnia\Index2.cshtml" />
+    <Content Include="Views\Przychodnia\Index.cshtml" />
+    <Content Include="Views\Recepcjonista\WeryfikujPacjentow.cshtml" />
+    <Content Include="Views\Recepcjonista\EdytujPacjenta.cshtml" />
+    <Content Include="Views\Recepcjonista\UtworzPacjenta.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

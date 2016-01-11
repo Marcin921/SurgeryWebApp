@@ -42,7 +42,7 @@
                 </button>
             }
 
-                @Html.ActionLink("Przychodnia lekarska", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Przychodnia lekarska", "Index", "Przychodnia", new { area = "" }, new { @class = "navbar-brand" })
                 
             </div>
             <div class="navbar-collapse collapse">
@@ -60,6 +60,8 @@
                     {
                         <li>@Html.ActionLink("O nas", "Onas", "Przychodnia")</li>
                         <li>@Html.ActionLink("Kalendarz", "UtworzKalendarz", "KalendarzDlaRecepcjonisty")</li>
+                        <li > @Html.ActionLink("Weryfikacja Pacjentów", "WeryfikujPacjentow", "Recepcjonista")</li>
+                        <li> @Html.ActionLink("Utworz Konto Pacjenta", "UtworzPacjenta", "Recepcjonista")</li>
                         <li>@Html.ActionLink("Kontakt", "Kontakt", "Przychodnia")</li>
                     }
                     else

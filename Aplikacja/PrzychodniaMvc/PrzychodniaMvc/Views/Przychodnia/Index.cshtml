@@ -1,0 +1,29 @@
+﻿@model IEnumerable<PrzychodniaMvc.Models.BazaDanych.Specjalizacja>
+
+@{
+    ViewBag.Title = "Przychodnia lekarska";
+}
+
+@if (User.Identity.IsAuthenticated)
+{
+    <font size="5">
+        <p align="center">Witaj  na stronie internetowej naszej przychodni </p>
+        <p align="center">Posiadamy lekarzy specjalistów:</p>
+    </font>
+}
+else
+{
+<font size="5">
+    <p align="center">Witaj  na stronie internetowej naszej przychodni </p>
+    <p align="center">Załóż konto aby mieć możliwość rejestracji do lekarzy specjalistów:</p>
+</font>
+}
+
+@foreach (var item in Model)
+{
+    <ul margin-left="500px">
+        <li>
+            @Html.DisplayFor(modelItem => item.NazwaSpecjalizacji)
+        </li>
+    </ul>
+}

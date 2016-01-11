@@ -1,7 +1,32 @@
-﻿
-@{
-    ViewBag.Title = "Onas";
+﻿@model IEnumerable<PrzychodniaMvc.Models.BazaDanych.SpecjalizacjaLekarza>
+
+<h2>Dodatkowe Informacje</h2>
+<font size="5">
+    <p align="left">W naszej przychodni przyjmują następujący lekarze:</p>
+</font>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Lekarz.Imie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Specjalizacja.NazwaSpecjalizacji)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lekarz.Imie)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lekarz.Nazwisko)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Specjalizacja.NazwaSpecjalizacji)
+        </td>
+    </tr>
 }
 
-<h2>Onas</h2>
-
+</table>
