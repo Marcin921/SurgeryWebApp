@@ -167,7 +167,6 @@
     <Content Include="Content\images\themes\base\theme.css" />
     <Content Include="Content\images\themes\base\tooltip.css" />
     <Content Include="Content\tlo.jpg" />
-    <Content Include="dhxscheduler.sample.mvc3.readme.txt" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Models\BazaDanych\DBModel.Context.tt">
@@ -457,7 +456,6 @@
     <Content Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
@@ -486,7 +484,6 @@
     <Content Include="Views\Recepcjonista\Zaloguj.cshtml" />
     <Content Include="Views\Przychodnia\AdminOnly.cshtml" />
     <Content Include="Views\Przychodnia\UnAuthorized.cshtml" />
-    <Content Include="Views\Przychodnia\Index2.cshtml" />
     <Content Include="Views\Przychodnia\Index.cshtml" />
     <Content Include="Views\Recepcjonista\WeryfikujPacjentow.cshtml" />
     <Content Include="Views\Recepcjonista\EdytujPacjenta.cshtml" />
@@ -499,10 +496,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ViewModels\" />
-    <Folder Include="Views\Account\" />
     <Folder Include="Views\Lekarz\" />
-    <Folder Include="Views\Użytkownik\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

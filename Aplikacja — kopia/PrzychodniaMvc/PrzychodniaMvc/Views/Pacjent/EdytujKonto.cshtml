@@ -1,7 +1,7 @@
 ﻿@model PrzychodniaMvc.Models.BazaDanych.Pacjent
 
 @{
-    ViewBag.Title = "EdytujKonto";
+    ViewBag.Title = "Edytuj Konto";
 }
 
 <h2>EdytujKonto</h2>
@@ -13,7 +13,14 @@
     <div class="form-horizontal">
 @if (Model.Zatwierdzono == false)
 {
-        <h4>Pacjent</h4>
+
+        <div>
+            <font color="red" , size="5">
+                <p align="center">Twoje konto nie zostało jeszcze  zweryfikowane</p>
+            </font>
+        </div>
+
+
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.IdPacjenta)
@@ -76,7 +83,12 @@
 }
 else if (Model.Zatwierdzono == true)
 {
-    <h4>Pacjent</h4>
+    <div>
+        <font color="green" , size="5">
+            <p align="center">Twoje konto zostało już  zweryfikowane</p>
+            <p align="center">Możesz edytować tylko numer telefonu</p>
+        </font>
+    </div>
     <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.IdPacjenta)

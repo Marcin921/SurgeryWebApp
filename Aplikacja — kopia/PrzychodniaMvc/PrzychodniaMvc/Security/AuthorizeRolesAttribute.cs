@@ -33,7 +33,7 @@ namespace PrzychodniaMvc.Security
         }
         protected override void HandleUnauthorizedRequest(AuthorizationContext filterContext)
         {
-            filterContext.Result = new RedirectResult("~/Home/UnAuthorized");
+            filterContext.Result = new RedirectResult("~/Przychodnia/UnAuthorized");
         }
 
         public static string CheckUserRole(string name)

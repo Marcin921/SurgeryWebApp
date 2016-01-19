@@ -7,20 +7,38 @@
 <head>
     <title>DHXScheduler initialization sample</title>
     <style>
-        body
-        {
-            background-color:#eee;
+        body {
+            background-color: #eee;
         }
     </style>
 </head>
 <body>
- 
+
     <div style="height:700px;width:900px;margin:0 auto" class="scheduler_container">
         <div>
+            @if (!@ViewBag.Zweryfikowano)
+            {
+                <div>
+                    <font color="red" , size="5">
+                        <p align="center">Twoje konto nie zostało jeszcze  zweryfikowane </p>
+                        <p align="center">Terminy wizyt są widoczne na kalendarzu ale nie możesz dokonać rezerwacji</p>
+                    </font>
+                </div>
+            }
+            else
+            {
+                <div>
+                    <font color="green" , size="5">
+                        <p align="center"> Twoje konto jest aktywne </p>
+                        <p align="center"> Aby dokonać rezerwacji wybierz lekarza, klinij na jeden z terminow oznaczonych na zielono i zaznacz go przyciskiem umieszczonym po lewej stronie zielonego prostokąta </p>
+                    </font>
+                </div>
+            }
             <br />
             Wybierz lekarza:
             <br />
             @Html.DropDownList("ListaLekarzy", null, htmlAttributes: new { @class = "form-control", @onchange = "CallChangefunc(this.value)" })
+            <br />
             <script>
                 function CallChangefunc(val) {
                     scheduler.clearAll();
@@ -30,8 +48,8 @@
             </script>
         </div>
 
-            @Html.Raw(Model.Render())
-            <script type="text/javascript">
+        @Html.Raw(Model.Render())
+        <script type="text/javascript">
 
                 scheduler._click.buttons.save = function (id) {
                     var ev = scheduler.getEvent(id);
@@ -42,12 +60,8 @@
                     .replace("js-id", encodeURIComponent(id)));
                 };
 
-                scheduler.attachEvent("onBeforeDrag", function (id, mode, e) {
-                    //any custom logic here
-                    return false;
-                });
                 scheduler._click.buttons.cancel = function (id) {
-                        
+
                     scheduler.locale.labels.icon_save = "Popros o rezerwację terminu";
                     scheduler.config.icons_select = ["icon_save"];
 
@@ -56,8 +70,16 @@
                 };
 
                 scheduler.attachEvent("onClick", function (event_id) {
-                    var ev = scheduler.getEvent(event_id);
+
+                    var zweryfikowano = @Html.Raw(Json.Encode(ViewBag.Zweryfikowano));
+
+                    if (!zweryfikowano) {
+                        return false;
+                    }
+
+					var ev = scheduler.getEvent(event_id);
                     var color = ev.color;
+
                     if (color == "green") {
                             scheduler.locale.labels.icon_save = "Popros o rezerwację terminu";
                             scheduler.config.icons_select = ["icon_save"];
@@ -75,18 +97,13 @@
                     return true;
                 });
 
-                scheduler.attachEvent("onDblClick", function (event_id) {
-                    var ev = scheduler.getEvent(event_id);
-                   var color = ev.color;
-                    scheduler.load('@Url.Action("Zapisz", new { id = "js-id", color = "js-color" })'
-                   .replace("js-id", encodeURIComponent(event_id))
-                   .replace("js-color", encodeURIComponent(color)));
-                    return true;
-                });
-                scheduler.attachEvent("onDblClick", function () {
+                scheduler.attachEvent("onBeforeDrag", function (id, mode, e) {
                     return false;
                 });
-            </script>
-        </div>
+                scheduler.attachEvent("onDblClick", function (id, mode, e) {
+                    return false;
+                });
+        </script>
+    </div>
 </body>
 </html>
